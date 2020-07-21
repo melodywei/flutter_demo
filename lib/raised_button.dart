@@ -5,15 +5,14 @@ class RaisedButtonDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Icon'),
+        title: Text('RaisedButtonDemo'),
       ),
       body: new Center(
-        child: new IconButton(
-          icon: Icon(Icons.volume_up, size: 48.0),
-          tooltip: '按下',
+        child: new RaisedButton(
           onPressed: () {
             print('按下');
           },
+          child: new Text("RaisedButtonDemo"),
         ),
       ),
     );

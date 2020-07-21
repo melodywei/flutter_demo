@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/icon.dart';
 import 'package:flutter_demo/image.dart';
+import 'package:flutter_demo/raised_button.dart';
 import 'package:flutter_demo/text.dart';
 import 'package:flutter_demo/icon_button.dart';
 import 'view_type.dart';
@@ -40,6 +41,8 @@ class MyApp extends StatelessWidget {
         return IconDemo();
       case ViewType.IconButton:
         return IconButtonDemo();
+      case ViewType.RaisedButton:
+        return RaisedButtonDemo();
       default:
         break;
     }
