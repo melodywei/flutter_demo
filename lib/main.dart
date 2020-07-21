@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/form.dart';
 import 'package:flutter_demo/grid.dart';
 import 'package:flutter_demo/icon.dart';
 import 'package:flutter_demo/image.dart';
@@ -43,6 +44,8 @@ class MyApp extends StatelessWidget {
         return RaisedButtonDemo();
       case ViewType.GridView:
         return GridViewDemo();
+      case ViewType.Form:
+        return FormDemo();
       default:
         break;
     }
