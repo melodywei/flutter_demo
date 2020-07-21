@@ -5,6 +5,7 @@ enum ViewType {
   Icon,
   IconButton,
   RaisedButton,
+  GridView,
 }
 
 var route = <ViewType, String>{
@@ -14,4 +15,5 @@ var route = <ViewType, String>{
   ViewType.Icon: 'Icon',
   ViewType.IconButton: 'IconButton',
   ViewType.RaisedButton: 'RaisedButton',
+  ViewType.GridView: "GridView",
 };

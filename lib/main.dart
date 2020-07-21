@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/grid.dart';
 import 'package:flutter_demo/icon.dart';
 import 'package:flutter_demo/image.dart';
 import 'package:flutter_demo/raised_button.dart';
@@ -40,6 +41,8 @@ class MyApp extends StatelessWidget {
         return IconButtonDemo();
       case ViewType.RaisedButton:
         return RaisedButtonDemo();
+      case ViewType.GridView:
+        return GridViewDemo();
       default:
         break;
     }
