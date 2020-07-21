@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
       ),
       home: MyHomePage(),
       routes: getroutes(),
-      initialRoute: route[ViewType.Home],
     );
   }
 
@@ -31,8 +30,6 @@ class MyApp extends StatelessWidget {
     switch (type) {
       case ViewType.Container:
         return MyContainer();
-      case ViewType.Home:
-        return MyHomePage();
       case ViewType.Image:
         return ImageDemo();
       case ViewType.Text:
@@ -70,35 +67,27 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('home'),
-        ),
-        body: new ListView(
-          children: addItems(),
-        ));
+      appBar: AppBar(
+        title: Text('home'),
+      ),
+      body: new ListView.builder(
+        itemCount: ViewType.values.length,
+        itemBuilder: (context, index) {
+          return additem(ViewType.values.elementAt(index));
+        },
+      ),
+    );
   }
 
   Widget additem(ViewType type) {
     return new ListTile(
-        title: Text(route[type]),
-        onTap: () {
-          print('click ' + type.index.toString());
-          if (route[type] != null) {
-            Navigator.pushNamed(context, route[type]);
-          }
-        });
-  }
-
-  List<Widget> addItems() {
-    List<Widget> ret = [];
-    for (var i = 0; i < ViewType.values.length; ++i) {
-      var type = ViewType.values[i];
-
-      if (type == ViewType.Home) {
-        continue;
-      }
-      ret.add(additem(type));
-    }
-    return ret;
+      title: Text(route[type]),
+      onTap: () {
+        print('click ' + type.index.toString());
+        if (route[type] != null) {
+          Navigator.pushNamed(context, route[type]);
+        }
+      },
+    );
   }
 }

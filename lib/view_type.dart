@@ -1,5 +1,4 @@
 enum ViewType {
-  Home,
   Container,
   Image,
   Text,
@@ -9,7 +8,6 @@ enum ViewType {
 }
 
 var route = <ViewType, String>{
-  ViewType.Home: '/Home',
   ViewType.Container: 'Container',
   ViewType.Image: 'Image',
   ViewType.Text: 'Text',
