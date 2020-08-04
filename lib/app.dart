@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
+import 'package:flutter_demo/chat/message_page.dart';
 
 class App extends StatefulWidget {
   @override
@@ -16,9 +17,15 @@ class AppState extends State<App> {
   PageType _currentIndex = PageType.MessagePage;
   static Router router;
 
+  MessagePage message;
+
   currentPage() {
     switch (_currentIndex) {
       case PageType.MessagePage:
+        if (message == null) {
+          message = new MessagePage();
+        }
+        return message;
         break;
       case PageType.Contact:
         break;
@@ -135,6 +142,7 @@ class AppState extends State<App> {
           )
         ],
       ),
+      body: currentPage(),
     );
   }
 
